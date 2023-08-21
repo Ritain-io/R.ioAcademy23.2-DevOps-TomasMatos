@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Math Application</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+</head>
+<body class="bg-light">
+
+<header>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <div class="navbar-brand d-flex align-items-center">
+                <a href="/" style="text-decoration:none; color:white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                    <strong>Math Web UI</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <div class="album py-5 bg-light" >
+        <div class="container">
+
+
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-1">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" style="font-size: 26px"><title>Placeholder</title><rect  th:fill="${thumbnailColor}" width="100%" height="100%" /><text x="50%" y="50%" fill="#eceeef" dy=".5em" th:text="${serviceName}" id="thumbnailTitle">Placeholder</text></svg>
+
+                        <div class="card-body">
+                            <h1 class="fw-light"  th:text="${title}" id="inputTitle">Placeholder</h1>
+                            <form style="margin-bottom:25px" onsubmit="return false">
+                                <div class="mb-3">
+                                    <label for="inputNumber" class="form-label">Number</label>
+                                    <input type="number" class="form-control" id="inputNumber" aria-describedby="inputNumberHelp">
+                                </div>
+
+                                <button th:url="${serviceUrl}"  th:text="${buttonText}" onClick="makeServiceRequest(this);" class="btn btn-primary" id="submissionButton">Placeholder</button>
+                            </form>
+                            <div id="result_success_div" style="display:none; margin-bottom: 15px ; padding-top:24px;  padding-left:10px; padding-bottom:12px; background-color: #e7f3fe; border-left: 6px solid #2196F3;">
+                                <p><strong>Result: </strong><span id="result_success_span">Placeholder</span></p>
+                            </div>
+                            <div id="result_error_div" style="display:none; margin-bottom: 15px ; padding-top:24px;  padding-left:10px; padding-bottom:12px; background-color: #ffdddd; border-left: 6px solid #f44336;">
+                                <p><strong>Error: </strong><span id="result_error_span">Placeholder</span></p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<script th:src="@{/assets/dist/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/services.js}"></script>
+
+</body>
+</html>
