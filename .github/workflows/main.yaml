@@ -41,5 +41,5 @@ jobs:
 
       - name: Push Docker Image
         run: |
-          echo ${{ secrets.f1REgg2501\! }} | docker login -u ${{ secrets.f1regg }} --password-stdin
+          echo ${{ secrets.f1REgg2501 }} | docker login -u ${{ secrets.f1regg }} --password-stdin
           docker push f1regg/image-api:latest
