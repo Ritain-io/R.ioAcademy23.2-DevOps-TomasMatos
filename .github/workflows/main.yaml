@@ -33,4 +33,13 @@ jobs:
         run: |
           cd Math
           mvn '-Dtest=rafaeldireito.com.math.end_to_end_tests.ui.*Tests' test
+      
+      - name: Build Docker Image
+        run: |
+          docker build -t image-api:latest .
+          docker tag image-api:latest f1regg/image-api:latest
 
+      - name: Push Docker Image
+        run: |
+          echo ${{ secrets.f1REgg2501! }} | docker login -u ${{ secrets.f1regg }} --password-stdin
+          docker push f1regg/image-api:latest
