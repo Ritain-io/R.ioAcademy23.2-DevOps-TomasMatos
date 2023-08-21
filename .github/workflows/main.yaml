@@ -63,7 +63,7 @@ jobs:
 
       - name: Log in to Docker Hub
         run: |
-          echo "${{ secrets.f1REgg2501 }}" | docker login -u f1regg --password-stdin
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u f1regg --password-stdin
 
  
 
