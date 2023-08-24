@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: testargocd
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: 'https://34.31.7.1:30429'
+    namespace: argocd  # Change this to the desired namespace
+  source:
+    repoURL: git@github.com:Ritain-io/R.ioAcademy23.2-DevOps-TomasMatos.git
+    targetRevision: main
+    path: /home/ubuntu/src/R.ioAcademy23.2-DevOps-TomasMatos/manifests
+  syncPolicy:
+    automated:
+      prune: true

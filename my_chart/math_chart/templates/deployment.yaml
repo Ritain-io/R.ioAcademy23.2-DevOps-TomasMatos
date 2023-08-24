@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-app-deployment   # Use .Release.Name for dynamic name
+spec:
+  replicas: {{ .Values.replicaCount }}        # Use .Values.replicaCount for replica count
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-app           # Use .Release.Name for labels
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-app         # Use .Release.Name for labels
+    spec:
+      containers:
+        - name: math-container  # Use .Chart.Name for container name
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.image.port }}
