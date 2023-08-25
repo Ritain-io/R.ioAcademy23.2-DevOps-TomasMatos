@@ -4,7 +4,7 @@
 replicaCount: 2
 
 image:
-  repository: mafarrico35/image_mathapi
+  repository: f1regg/mathimage
   tag: latest
   port: 8080
 
