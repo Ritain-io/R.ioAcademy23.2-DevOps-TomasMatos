@@ -19,4 +19,4 @@ EXPOSE 8080
  
 
 # Define the command to run your application
-CMD ["java", "-jar", "math.jar"
+CMD ["java", "-jar", "math.jar"]
