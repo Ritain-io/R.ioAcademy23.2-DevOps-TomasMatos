@@ -4,59 +4,59 @@ To create a basic Helm chart structure, you can use the following command:
 
 ```bash
 helm create <chart-name>
-
+```
 This will generate a new directory <chart-name> with the basic Helm chart structure. You can then move your application-specific configurations into this structure.
 Math Application Helm Chart
 
 This Helm chart deploys the Math application to a Kubernetes cluster. The Math application is a simple web service for performing mathematical operations.
 Prerequisites
 
-    A running Kubernetes cluster.
-    Helm installed on your local machine.
+A running Kubernetes cluster.
+Helm installed on your local machine.
 
-Usage
+##Usage
 
-    Clone this repository to your local machine.
+Clone this repository to your local machine.
 
-    Navigate to the Helm chart directory:
+Navigate to the Helm chart directory:
 
-bash
+```bash
 
 cd math-chart
+```
+Customize the chart values in the values.yaml file according to your requirements.
 
-    Customize the chart values in the values.yaml file according to your requirements.
+Install the Helm chart using the following command:
 
-    Install the Helm chart using the following command:
-
-bash
+```bash
 
 helm install <release-name> . -f values.yaml
-
+```
 Replace <release-name> with the desired name for your release.
 
-    To upgrade the Helm chart, use:
+ To upgrade the Helm chart, use:
 
-bash
+```bash
 
 helm upgrade <release-name> . -f values.yaml
+```
+To uninstall the Helm chart, run:
 
-    To uninstall the Helm chart, run:
-
-bash
+```bash
 
 helm uninstall <release-name>
-
+```
 Configuration
 
 You can customize the Helm chart by modifying the values in the values.yaml file. Key configurations include:
 
-    replicaCount: Number of Math application replicas.
-    image.repository: Math application container image repository.
-    service.type: Kubernetes service type for Math application (e.g., ClusterIP or NodePort).
-    ingress.enabled: Enable Ingress for Math application.
-    ingress.hosts: Ingress hostnames for the Math application.
+replicaCount: Number of Math application replicas.
+image.repository: Math application container image repository.
+service.type: Kubernetes service type for Math application (e.g., ClusterIP or NodePort).
+ingress.enabled: Enable Ingress for Math application.
+ingress.hosts: Ingress hostnames for the Math application.
 
-Testing
+##Testing
 
 Test the deployed Math application using the service's ClusterIP or exposed Ingress endpoint.
 
