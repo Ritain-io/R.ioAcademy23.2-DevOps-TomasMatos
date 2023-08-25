@@ -1,7 +1,7 @@
 
 # math-app/values.yaml
 
-replicaCount: 2
+replicaCount: 3
 
 image:
   repository: f1regg/mathimage
