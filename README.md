@@ -150,12 +150,12 @@ Math Application Helm Chart
 
 This Helm chart deploys the Math application to a Kubernetes cluster. The Math application is a simple web service for performing mathematical operations.
 
-##Prerequisites
+## Prerequisites
 
     A running Kubernetes cluster.
     Helm installed on your local machine.
 
-##Usage
+## Usage
 
     Clone this repository to your local machine.
 
@@ -187,7 +187,7 @@ To uninstall the Helm chart, run:
 
     helm uninstall <release-name>
 ```
-##Configuration
+## Configuration
 
 You can customize the Helm chart by modifying the values in the values.yaml file. Key configurations include:
 
@@ -197,7 +197,7 @@ You can customize the Helm chart by modifying the values in the values.yaml file
     ingress.enabled: Enable Ingress for Math application.
     ingress.hosts: Ingress hostnames for the Math application.
 
-##Testing
+## Testing
 
 Test the deployed Math application using the service's ClusterIP or exposed Ingress endpoint.
 
