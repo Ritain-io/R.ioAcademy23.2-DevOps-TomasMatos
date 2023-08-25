@@ -1,3 +1,71 @@
+#Creating a Basic Helm Chart Structure
+
+To create a basic Helm chart structure, you can use the following command:
+
+```bash
+
+helm create <chart-name>
+```
+This will generate a new directory <chart-name> with the basic Helm chart structure. You can then move your application-specific configurations into this structure.
+Math Application Helm Chart
+
+This Helm chart deploys the Math application to a Kubernetes cluster. The Math application is a simple web service for performing mathematical operations.
+
+##Prerequisites
+
+A running Kubernetes cluster.
+Helm installed on your local machine.
+
+##Usage
+
+Clone this repository to your local machine.
+
+Navigate to the Helm chart directory:
+
+```bash
+
+    cd math-chart
+```
+Customize the chart values in the values.yaml file according to your requirements.
+
+Install the Helm chart using the following command (replace <path-to-tgz> with the actual path to the chart archive):
+
+```bash
+
+helm install <release-name> <path-to-tgz> -f values.yaml
+```
+Replace <release-name> with the desired name for your release, and <path-to-tgz> with the actual path to the chart archive.
+
+To upgrade the Helm chart, use:
+
+```bash
+
+helm upgrade <release-name> <path-to-tgz> -f values.yaml
+```
+
+To uninstall the Helm chart, run:
+
+```bash
+
+    helm uninstall <release-name>
+```
+
+##Configuration
+
+You can customize the Helm chart by modifying the values in the values.yaml file. Key configurations include:
+
+replicaCount: Number of Math application replicas.
+image.repository: Math application container image repository.
+service.type: Kubernetes service type for Math application (e.g., ClusterIP or NodePort).
+ingress.enabled: Enable Ingress for Math application.
+ingress.hosts: Ingress hostnames for the Math application.
+
+##Testing
+
+Test the deployed Math application using the service's ClusterIP or exposed Ingress endpoint.
+
+
+
 # Math Base API
 
 The **Math** software solution is a versatile tool that provides two distinct services: **Odd vs Even** and **Prime Number Check**. These services allow users to seamlessly determine whether a number is odd or even, as well as whether a number is prime.
