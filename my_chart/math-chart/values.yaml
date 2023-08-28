@@ -53,3 +53,9 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Add the Image Updater configuration
+argocd-image-updater:
+  enabled: true
+  cache: true
+  force: true
