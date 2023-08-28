@@ -20,3 +20,7 @@ EXPOSE 8080
 
 # Define the command to run your application
 CMD ["java", "-jar", "math.jar"]
+
+
+# Set environment variables if needed 
+ENV APP_VERSION=latest
